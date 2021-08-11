@@ -1,0 +1,23 @@
+---
+title: "Rmarkdown"
+author: "Rio em Dados"
+date: "09/08/2021"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r Carregando_Pacote, message=FALSE}
+library("tidyverse")
+```
+
+```{r Grafico_Dispersao, echo=FALSE, include=TRUE, message=TRUE, warning=FALSE }
+ ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y=hwy))
+```
+
+```{r Grafico_Dispersao_Classes , echo=TRUE, include=TRUE, message=TRUE, warning=FALSE}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = class))
+```
